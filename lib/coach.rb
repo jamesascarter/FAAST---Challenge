@@ -1,8 +1,7 @@
 class Coach
 
-	def initialize
-		coach = []
-	end	
+	
+	DEFAULT_CAPACITY = 40
 
 	
 end
