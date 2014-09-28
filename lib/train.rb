@@ -1,25 +1,8 @@
 class Train
 
-	DEFAULT_CAPACITY = 3
+	attr_reader :coaches
 
 	def initialize
-	@coaches = []
-	@capacity = DEFAULT_CAPACITY
-	end	
-
-	def coaches
-		@coaches = []
-	end	
-
-	def capacity
-		@capacity = DEFAULT_CAPACITY
-	end	
-
-	def add_coaches(coach)
-		@coaches << coach
-	end
-	
-	def coach_count
-		@coaches.count
+		@coaches = [Coach.new, Coach.new, Coach.new]
 	end	
 end

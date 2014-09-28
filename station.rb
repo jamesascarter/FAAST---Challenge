@@ -29,6 +29,6 @@ class Station
 	end	
 
 	def leave(train)
-		trains.pop
+		trains.delete
 	end	
 end

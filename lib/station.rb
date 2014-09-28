@@ -2,6 +2,7 @@ class Station
 
 	def initialize
 		@trains = []
+		@passengers = []
 	end	
 
 	def passengers
@@ -11,10 +12,6 @@ class Station
 	def trains
 		@trains ||= []
 	end	
-
-	def coachpassengers
-		@coachpasengers ||= []
-	end
 
 	def passenger_count
 		passengers.count
@@ -39,10 +36,5 @@ class Station
 	def leave(train)
 		trains.delete(train)
 	end	
-
-	def get_on_coach(passenger)
-		coachpassengers << passenger
-		passengers.delete(passenger)
-	end
 
 end

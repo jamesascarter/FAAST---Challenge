@@ -31,13 +31,7 @@ describe Station do
 		expect(station.train_count).to eq(0)
 	end
 
-	it "The passengers will be able to leave station for the coach" do
-		station.touch_in(passenger)
-		expect(station.passenger_count).to eq(1)
-		station.get_on_coach(passenger)
-		expect(station.passenger_count).to eq(0)
 
-	end	
 		
 	
 end
