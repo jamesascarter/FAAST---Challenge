@@ -10,17 +10,6 @@ describe Coach do
 		expect(coach.capacity).to eq(40)
 	end	
 
-	it "should be able to add passengers to coach" do
-		coach.embark(passenger)
-		expect(coach.passenger_count).to eq(1)
-	end
-		
-	it "should be remove passengers from the coach" do
-		coach.embark(passenger)
-		coach.leave(passenger)
-		expect(coach.passenger_count).to eq(0)
-	end
-
 	it "should know when it is full" do
 		40.times {coach.embark(passenger)}
 		expect(coach.full?).to eq(true)
@@ -28,7 +17,24 @@ describe Coach do
 
 	it "should raise error when it is full" do
 		40.times {coach.embark(passenger)}
-		expect(lambda{coach.embark}).to raise_error("sorry the coach is full")
+		expect(lambda{coach.embark(passenger)}).to raise_error("sorry the coach is full")
+	end
+
+	it "should be able to add passengers to coach" do
+		coach.embark(passenger)
+		expect(coach.passenger_count).to eq(1)
+	end
+		
+	it "should  able to remove passengers from the coach" do
+		allow(station).to receive(:touch_in)
+		coach.embark(passenger)
+		coach.leave(passenger, station)
+		expect(coach.passenger_count).to eq(0)
+	end
+
+	it "should raise error when it is full" do
+		40.times {coach.embark(passenger)}
+		expect(lambda{coach.embark(passenger)}).to raise_error("sorry the coach is full")
 	end
 end
 

@@ -30,8 +30,5 @@ describe Station do
 		station.leave(train)
 		expect(station.train_count).to eq(0)
 	end
-
-
-		
 	
 end

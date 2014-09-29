@@ -1,15 +1,17 @@
+require 'station'
+
 class Coach
 
 
 	DEFAULT_CAPACITY = 40
 
 	def initialize
-		@capacity = DEFAULT_CAPACITY
-		@passengers = []
+		capacity
+		passengers
 	end	
 
 	def capacity
-		@capacity
+		@capacity = DEFAULT_CAPACITY
 	end	
 
 	def passengers
@@ -17,12 +19,13 @@ class Coach
 	end	
 
 	def embark(passenger)
-		@passengers << passenger
 		raise "sorry the coach is full" if full?
+		@passengers << passenger
 	end
 
-	def leave(passenger)
+	def leave(passenger, station)
 		passengers.delete(passenger)
+		station.touch_in(passenger)
 	end	
 
 	def passenger_count
@@ -30,6 +33,6 @@ class Coach
 	end
 
 	def full?
-		capacity == 40
+		passenger_count == @capacity
 	end	
 end

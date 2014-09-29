@@ -6,15 +6,15 @@ class Station
 	end	
 
 	def passengers
-		@passengers ||= []
+		@passengers = []
 	end	
 
 	def trains
-		@trains ||= []
+		@trains = []
 	end	
 
 	def passenger_count
-		passengers.count
+		@passengers.count
 	end
 
 	def touch_in(passenger)
@@ -30,7 +30,7 @@ class Station
 	end	
 
 	def train_count
-		trains.count
+		@trains.count
 	end	
 
 	def leave(train)
