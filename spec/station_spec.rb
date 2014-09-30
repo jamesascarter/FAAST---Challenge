@@ -7,9 +7,7 @@ describe Station do
 	let(:train)  {double :train}
 
 	it "A passenger should be able to touch in" do
-	 	expect(station.passenger_count).to eq(0)
-	 	station.touch_in(passenger)
-	 	expect(station.passenger_count).to eq(1)
+		expect{station.touch_in(passenger)}.to change{station.passenger_count}.by 1
 
 	 end
 
@@ -30,5 +28,5 @@ describe Station do
 		station.leave(train)
 		expect(station.train_count).to eq(0)
 	end
-	
+
 end
