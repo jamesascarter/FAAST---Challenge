@@ -8,4 +8,8 @@ class Passenger
 		@balance
 	end
 
+	def board(coach)
+		coach.embark(self)
+	end
+
 end	

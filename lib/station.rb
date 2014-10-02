@@ -1,16 +1,10 @@
 class Station
 
+	attr_accessor :trains, :passengers
+
 	def initialize
 		@trains = []
 		@passengers = []
-	end	
-
-	def passengers
-		@passengers = []
-	end	
-
-	def trains
-		@trains = []
 	end	
 
 	def passenger_count

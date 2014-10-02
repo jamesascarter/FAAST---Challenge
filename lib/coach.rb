@@ -15,7 +15,7 @@ class Coach
 	end	
 
 	def passengers
-		@passengers = []
+		@passengers
 	end	
 
 	def embark(passenger)
